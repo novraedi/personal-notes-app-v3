@@ -24,4 +24,5 @@ export default function NoteList({ isLoading, notes }) {
 
 NoteList.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.shape(NoteItem.propTypes)).isRequired,
+  isLoading: PropTypes.bool,
 };

@@ -11,6 +11,8 @@ import RegisterPage from "./pages/RegisterPage";
 import { getUserLogged, putAccessToken } from "./utils/network-data";
 import ThemeContext from "./contexts/ThemeContext";
 import LocaleContext from "./contexts/LocaleContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [auth, setAuth] = useState(null);
@@ -100,6 +102,7 @@ function App() {
               </Routes>
             </main>
           </div>
+          <ToastContainer />
         </LocaleContext.Provider>
       </ThemeContext.Provider>
     );
@@ -121,6 +124,7 @@ function App() {
             </Routes>
           </main>
         </div>
+        <ToastContainer />
       </LocaleContext.Provider>
     </ThemeContext.Provider>
   );

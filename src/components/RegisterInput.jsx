@@ -1,5 +1,6 @@
 import React from "react";
 import useInput from "../hooks/useInput";
+import PropTypes from "prop-types";
 
 export default function RegisterInput({ register }) {
   const [name, handletName] = useInput("");
@@ -36,3 +37,7 @@ export default function RegisterInput({ register }) {
     </form>
   );
 }
+
+RegisterInput.propTypes = {
+  register: PropTypes.func.isRequired,
+};

@@ -1,3 +1,5 @@
+import ToastNotification from "../components/ToastNotification";
+
 const BASE_URL = "https://notes-api.dicoding.dev/v1";
 
 function getAccessToken() {
@@ -30,7 +32,7 @@ async function login({ email, password }) {
   const responseJson = await response.json();
 
   if (responseJson.status !== "success") {
-    alert(responseJson.message);
+    ToastNotification(responseJson.message, "error");
     return { error: true, data: null };
   }
 
@@ -49,7 +51,7 @@ async function register({ name, email, password }) {
   const responseJson = await response.json();
 
   if (responseJson.status !== "success") {
-    alert(responseJson.message);
+    ToastNotification(responseJson.message, "error");
     return { error: true };
   }
 

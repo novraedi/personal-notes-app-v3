@@ -8,12 +8,12 @@ import {
 } from "react-icons/md";
 import ThemeContext from "../contexts/ThemeContext";
 import LocaleContext from "../contexts/LocaleContext";
-
 import { useContext } from "react";
+import PropTypes from "prop-types";
+
 export default function Navigation({ name, logout }) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { locale, toggleLocale } = useContext(LocaleContext);
-  console.log(locale);
   if (!name)
     return (
       <>
@@ -86,3 +86,8 @@ export default function Navigation({ name, logout }) {
     </>
   );
 }
+
+Navigation.propTypes = {
+  name: PropTypes.string,
+  logout: PropTypes.func,
+};
